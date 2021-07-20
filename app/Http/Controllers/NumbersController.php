@@ -56,7 +56,6 @@ class NumbersController extends Controller
             }
             sort($n);
             $json_n = json_encode($n);
-            dd($json_n);
 
             $d_plus = Number::calc_D_N_Plus($n);
             $d_minus = Number::calc_D_N_Minus($n);
