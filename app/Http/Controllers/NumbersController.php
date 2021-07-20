@@ -63,11 +63,9 @@ class NumbersController extends Controller
             $json_d = json_encode($d_plus);
             $json_d_minus = json_encode($d_minus);
 
-            $new = Number::new(
-                ['n_100'=>$json_n],
-                ['random_n'=>$request->n1, 'D_N'=>$request->n2, 'd_100'=>$json_d, 'd_minus_100'=>$json_d_minus, 'D_plus'=>max($d_plus), 'D_minus'=>max($d_minus), 'D_max'=>max([max($d_plus), max($d_minus)])]
+            $new = Number::create(
+                ['n_100'=>$json_n, 'random_n'=>$request->n1, 'D_N'=>$request->n2, 'd_100'=>$json_d, 'd_minus_100'=>$json_d_minus, 'D_plus'=>max($d_plus), 'D_minus'=>max($d_minus), 'D_max'=>max([max($d_plus), max($d_minus)])]
             );
-            $new->save();
         }
 
         return redirect()->action([NumbersController::class,'index']);
