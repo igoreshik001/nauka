@@ -48,6 +48,7 @@ class NumbersController extends Controller
 
     public function calculate(Request $request)
     {
+        dd($request);
         Number::truncate();
         for ($j=0; $j < $request->n2; $j++) { 
             $n = [];
