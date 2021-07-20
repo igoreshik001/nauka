@@ -13,6 +13,7 @@ class CreateNumbersTable extends Migration
      */
     public function up()
     {
+        //new
         Schema::create('numbers', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('random_n');
