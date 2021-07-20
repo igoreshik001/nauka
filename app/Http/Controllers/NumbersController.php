@@ -55,7 +55,7 @@ class NumbersController extends Controller
                 $n[$i] = rand(0, 100000) / 100000.0;
             }
             sort($n);
-            $json_n = json_encode($n, JSON_FORCE_OBJECT);
+            $json_n = json_encode($n);
 
             $d_plus = Number::calc_D_N_Plus($n);
             $d_minus = Number::calc_D_N_Minus($n);
